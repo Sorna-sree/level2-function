@@ -7,48 +7,38 @@
 
 
 birth_year=int(input("Enter your birthday year"))
-#child=["baby","LKG","1 to 5th std"]
-#Teen=["Higher secondary school"]
-#Adult=["college","teachers","IT employee"]
-
 
 #age calculation
 age=2022-birth_year
 print(age)
 
-def child(age):
-    if(age<=3):
-        print(f" if the person is a baby ")
-    if(age>3 and age<=5):
-        print(" if the person is a LKG student")
-    if(age>5 and age<=12):
-        print(" if the person is 1st std to 5th std school student")
+#store the age group in a list
+Group_list=["child","Teen","Adult","Senior citizen"]
+
+def ageGroup(age,Gruoplist):
+    #child (age 12 or below)
+    if (age<=12):
+        return Group_list[0]
+    
+    # Teen (age 13-19)
+    if(age<=13 and age>=19):
+        return Group_list[1]
+    
+    #adult (20-65)
+    if(age>=20 and age<=65):
+        return Group_list[2]
+ 
+    #citizen (above 65)
+    if(age>65):
+        return Group_list[3]
         
-def Teen(age):
-    if(age>=19):
-        print(" if the person is Higher secondary school student")
-
-def Adult(age):
-    if(age>=20 and age<24):
-        print("if the person is college student")
-    if(age>=24):
-        print("if the person is Teacher")
-
-def senior_citizen(age):
-    print(" if the person is Senior Citizen")
-
-#child (age 12 or below)
-if (age<=12):
-    child_job=child(age)
     
-# Teen (age 13-19)
-if(age<=13 and age>=19):
-    Teen_job=Teen(age)
+
+#function call
+Group=ageGroup(age,Group_list)
+print("If the person is ",Group)
+
+
+
+
     
-#adult (20-65)
-if(age>=20 and age<=60):
-    Adult_job=Adult(age)
-    
-#citizen (above 65)
-if(age>60):
-    senior_citizen(age)
